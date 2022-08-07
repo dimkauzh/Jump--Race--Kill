@@ -11,8 +11,12 @@ config_version=4
 [application]
 
 config/name="Jump, Race, Kill"
-run/main_scene="res://Level 1.tscn"
+run/main_scene="res://Main-Menu.tscn"
 config/icon="res://assets/player/platformChar_happy.png"
+
+[display]
+
+window/vsync/use_vsync=false
 
 [input]
 

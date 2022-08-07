@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://World-TileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://One-Way Blocks.tres" type="TileSet" id=2]
@@ -7,8 +7,9 @@
 [ext_resource path="res://Main.gd" type="Script" id=5]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/HUD/Coin_0.png" type="Texture" id=7]
-[ext_resource path="res://assets/fonts/04B_03__.TTF" type="DynamicFontData" id=8]
+[ext_resource path="res://assets/fonts/Pixel-Font.TTF" type="DynamicFontData" id=8]
 [ext_resource path="res://HUD.gd" type="Script" id=9]
+[ext_resource path="res://Blue Enemy.tscn" type="PackedScene" id=10]
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 2570.5, 21 )
@@ -157,6 +158,15 @@ position = Vector2( 5847, -496 )
 [node name="Coin15" parent="Coins" instance=ExtResource( 4 )]
 position = Vector2( 5927, 96 )
 
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Blue Enemy" parent="Enemies" instance=ExtResource( 10 )]
+position = Vector2( 399, 343 )
+
+[node name="Blue Enemy2" parent="Enemies" instance=ExtResource( 10 )]
+position = Vector2( 455, 344 )
+direction = 1
+
 [node name="HUD" type="CanvasLayer" parent="."]
 script = ExtResource( 9 )
 
@@ -174,9 +184,9 @@ texture = ExtResource( 7 )
 expand = true
 
 [node name="Label" type="Label" parent="HUD"]
-margin_left = 66.0
+margin_left = 67.0
 margin_top = 20.0
-margin_right = 114.0
+margin_right = 115.0
 margin_bottom = 68.0
 custom_fonts/font = SubResource( 5 )
 text = "X"

@@ -6,7 +6,6 @@ var gravity = 1200
 var change = Vector2()
 var vel = Vector2()
 var jumping = false
-var coin = 0
 
 func get_input():
 	vel.x = 0
