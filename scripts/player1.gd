@@ -57,5 +57,6 @@ func ouch(var pos_x):
 	Input.action_release("ui_right")
 	vel = move_and_slide(vel, Vector2(0, -1))
 
+
 func _on_Timer_timeout():
 	set_modulate("ffffff")

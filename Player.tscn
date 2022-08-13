@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://player1.gd" type="Script" id=1]
 [ext_resource path="res://assets/player/platformChar_walk1.png" type="Texture" id=11]
@@ -27,6 +27,9 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 16, 64 )
+
 [node name="Player" type="KinematicBody2D"]
 collision_mask = 14
 script = ExtResource( 1 )
@@ -40,3 +43,9 @@ position = Vector2( 0, 9.53674e-07 )
 scale = Vector2( 1.97917, 1.98958 )
 frames = SubResource( 1 )
 animation = "idle"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 0, 32 )
+shape = SubResource( 6 )
