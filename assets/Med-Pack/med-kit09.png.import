@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/2.png-85bf151019af597391c958cc40f27edb.stex"
+path="res://.import/med-kit09.png-957be0014917d942999e28264fd2ed33.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/hearts/2.png"
-dest_files=[ "res://.import/2.png-85bf151019af597391c958cc40f27edb.stex" ]
+source_file="res://assets/Med-Pack/med-kit09.png"
+dest_files=[ "res://.import/med-kit09.png-957be0014917d942999e28264fd2ed33.stex" ]
 
 [params]
 

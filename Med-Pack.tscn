@@ -1,0 +1,38 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://assets/Med-Pack/med-kit06.png" type="Texture" id=1]
+[ext_resource path="res://assets/Med-Pack/med-kit03.png" type="Texture" id=2]
+[ext_resource path="res://assets/Med-Pack/med-kit08.png" type="Texture" id=3]
+[ext_resource path="res://assets/Med-Pack/med-kit04.png" type="Texture" id=4]
+[ext_resource path="res://assets/Med-Pack/med-kit10.png" type="Texture" id=5]
+[ext_resource path="res://assets/Med-Pack/med-kit00.png" type="Texture" id=6]
+[ext_resource path="res://assets/Med-Pack/med-kit05.png" type="Texture" id=7]
+[ext_resource path="res://assets/Med-Pack/med-kit01.png" type="Texture" id=8]
+[ext_resource path="res://assets/Med-Pack/med-kit07.png" type="Texture" id=9]
+[ext_resource path="res://assets/Med-Pack/med-kit02.png" type="Texture" id=10]
+[ext_resource path="res://assets/Med-Pack/med-kit09.png" type="Texture" id=11]
+[ext_resource path="res://Med-Pack.gd" type="Script" id=12]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 6 ), ExtResource( 8 ), ExtResource( 10 ), ExtResource( 2 ), ExtResource( 4 ), ExtResource( 7 ), ExtResource( 1 ), ExtResource( 9 ), ExtResource( 3 ), ExtResource( 11 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 17.25, 11 )
+
+[node name="Med-Pack" type="Area2D"]
+script = ExtResource( 12 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 3, 3 )
+frames = SubResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -1.25, -2 )
+shape = SubResource( 2 )
+
+[connection signal="body_shape_entered" from="." to="." method="_on_MedPack_body_shape_entered"]

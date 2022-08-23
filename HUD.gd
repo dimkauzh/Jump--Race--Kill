@@ -1,21 +1,23 @@
 extends CanvasLayer
 
 var coin = 0
+var completed = false
 
 func _ready():
 	$Coin.text = String(coin)
-	hearts()
+	load_hearts()
 	Global.hud = self
 
-func hearts():
-	$hearts.rect_size.x = Global.hearts * 36
-	$nohearts.rect_size.x = (Global.hearts_max - Global.hearts) * 36
+func load_hearts():
+	$hearts.rect_size.x = Global.hearts * 53
+	$nohearts.rect_size.x = (Global.hearts_max - Global.hearts) * 53
 	$nohearts.rect_position.x = $hearts.rect_position.x + $hearts.rect_size.x * $hearts.rect_scale.x
-
 
 
 func _on_Coin_coin_col():
 	coin = coin + 1
-	if coin == 15:
-		get_tree().change_scene("res://youwin.tscn")
 	_ready()
+	if coin == 16:
+		get_tree().change_scene("res://youwin.tscn")
+
+

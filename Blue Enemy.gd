@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 var vel = Vector2()
 export var direction = -1
-export var color = "Blue"
+export var color = "ffffff"
 var speed = 50
 var gravity = 20
 var coin
@@ -28,7 +28,6 @@ func _physics_process(delta):
 	if is_on_wall() or not $RayCast2D.is_colliding():
 		direction = direction * -1
 		$AnimatedSprite.flip_h = true
-		$RayCast2D.position.x = $CollisionShape2D.shape.get_extents().x * direction
 		if direction == -1:
 			$AnimatedSprite.flip_h = false
 	
@@ -37,27 +36,14 @@ func _physics_process(delta):
 	
 	vel = move_and_slide(vel, Vector2.UP)
 
-	
-func _on_Area2D_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
+
+func _on_up_collision_body_entered(body):
 	speed = 0
 	$AnimatedSprite.play("squash")
-	
-	#Global.add_coin()
 
-func _on_Area2D_body_shape_exited(body_rid, body, body_shape_index, local_shape_index):
+
+func _on_up_collision_body_exited(body):
 	queue_free()
 	
 func _on_middle_collision_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
 	body.ouch(position.x)
-#
-#Red = ff0000
-#Green = ddfd00
-#Purple = 9d23e1
-#
-#
-#
-#
-#
-#
-#
-#

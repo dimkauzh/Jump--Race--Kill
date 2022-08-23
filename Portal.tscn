@@ -1,0 +1,40 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://assets/Portal/portal_08.png" type="Texture" id=1]
+[ext_resource path="res://assets/Portal/portal_03.png" type="Texture" id=2]
+[ext_resource path="res://assets/Portal/portal_09.png" type="Texture" id=3]
+[ext_resource path="res://assets/Portal/portal_10.png" type="Texture" id=4]
+[ext_resource path="res://assets/Portal/portal_06.png" type="Texture" id=5]
+[ext_resource path="res://assets/Portal/portal_01.png" type="Texture" id=6]
+[ext_resource path="res://assets/Portal/portal_00.png" type="Texture" id=7]
+[ext_resource path="res://assets/Portal/portal_07.png" type="Texture" id=8]
+[ext_resource path="res://assets/Portal/portal_02.png" type="Texture" id=9]
+[ext_resource path="res://assets/Portal/portal_11.png" type="Texture" id=10]
+[ext_resource path="res://assets/Portal/portal_05.png" type="Texture" id=11]
+[ext_resource path="res://assets/Portal/portal_04.png" type="Texture" id=12]
+[ext_resource path="res://Portal.gd" type="Script" id=13]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 8.0
+height = 10.0
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 7 ), ExtResource( 6 ), ExtResource( 9 ), ExtResource( 2 ), ExtResource( 12 ), ExtResource( 11 ), ExtResource( 5 ), ExtResource( 8 ), ExtResource( 1 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "start",
+"speed": 13.0
+} ]
+
+[node name="Area2D" type="Area2D"]
+scale = Vector2( 5, 5 )
+script = ExtResource( 13 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.2, 3.15905e-06 )
+shape = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 8, -24.6 )
+frames = SubResource( 2 )
+animation = "start"

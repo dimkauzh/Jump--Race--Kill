@@ -1,0 +1,100 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://assets/background/set2_background.png" type="Texture" id=1]
+[ext_resource path="res://assets/fonts/CrimsonText-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/fonts/Pixel-Font.TTF" type="DynamicFontData" id=3]
+[ext_resource path="res://Levels.gd" type="Script" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 95
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 65
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 30
+font_data = ExtResource( 3 )
+
+[node name="Levels" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.032
+anchor_bottom = 1.045
+margin_right = 0.231934
+margin_bottom = -6.10352e-05
+texture = ExtResource( 1 )
+expand = true
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.337
+anchor_right = 0.638
+anchor_bottom = 0.163
+margin_left = -0.0880127
+margin_top = 2.0
+margin_right = -0.312012
+margin_bottom = 0.199997
+custom_fonts/font = SubResource( 1 )
+text = "Levels"
+
+[node name="Level 2" type="Button" parent="."]
+modulate = Color( 0.992157, 1, 0, 1 )
+anchor_left = 0.258
+anchor_top = 0.333
+anchor_right = 0.448
+anchor_bottom = 0.485
+margin_left = -0.192017
+margin_top = 0.200012
+margin_right = 0.247986
+margin_bottom = 3.05176e-05
+custom_fonts/font = SubResource( 2 )
+action_mode = 0
+button_mask = 7
+text = "Level 2"
+
+[node name="Level 3" type="Button" parent="."]
+modulate = Color( 1, 0, 0.74902, 1 )
+anchor_left = 0.516
+anchor_top = 0.333
+anchor_right = 0.711
+anchor_bottom = 0.485
+margin_left = -0.384033
+margin_top = 0.200012
+margin_right = -5.06403
+margin_bottom = 3.05176e-05
+custom_fonts/font = SubResource( 2 )
+action_mode = 0
+button_mask = 7
+text = "Level 3"
+
+[node name="Level 1" type="Button" parent="."]
+modulate = Color( 0.290196, 1, 0, 1 )
+anchor_top = 0.333
+anchor_right = 0.184
+anchor_bottom = 0.485
+margin_top = 0.199982
+margin_right = -0.416016
+custom_fonts/font = SubResource( 2 )
+text = "Level 1"
+
+[node name="Back" type="Button" parent="."]
+modulate = Color( 0, 0.905882, 1, 1 )
+anchor_left = 0.018
+anchor_top = 0.027
+anchor_right = 0.1
+anchor_bottom = 0.088
+margin_left = -0.432001
+margin_top = -0.200001
+margin_right = -0.400002
+margin_bottom = 0.199997
+custom_fonts/font = SubResource( 3 )
+text = "Back"
+
+[connection signal="pressed" from="Level 2" to="." method="_on_Level_pressed" binds= [ 2 ]]
+[connection signal="pressed" from="Level 3" to="." method="_on_Level_pressed" binds= [ 3 ]]
+[connection signal="pressed" from="Level 1" to="." method="_on_Level_pressed" binds= [ 1 ]]
+[connection signal="pressed" from="Back" to="." method="_on_Back_pressed"]

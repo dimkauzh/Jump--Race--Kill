@@ -1,11 +1,12 @@
 extends Control
 
-
-
 func _on_Button_pressed():
-	Global.hearts = Global.hearts_max
-	get_tree().change_scene("res://Level 1.tscn")
+	get_tree().change_scene("res://Levels.tscn")
 
 
 func _on_Button2_pressed():
 	get_tree().change_scene("res://howtoplay.tscn")
+
+
+func _on_exit_pressed():
+	get_tree().quit()
