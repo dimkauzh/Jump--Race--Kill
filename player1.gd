@@ -14,7 +14,7 @@ var anim_ladder := false
 var jump_count = 0
 var extrajumps = 1
 
-func anim_ladder():
+func anim_ladder1():
 	if anim_ladder == true:
 		$AnimatedSprite.play("ladder")
 	if anim_ladder == false:
@@ -56,7 +56,7 @@ func walk_animation():
 	get_input()
 
 func _physics_process(delta):
-	anim_ladder()
+	anim_ladder1()
 	if jumping and is_on_floor():
 		jumping = false
 	if climbing == false:
@@ -96,8 +96,6 @@ func ouch(var pos_x):
 
 func _on_Timer_timeout():
 	set_modulate("ffffff")
-
-
 
 func moveandslide():
 	vel = move_and_slide(vel, Vector2(0, -1))

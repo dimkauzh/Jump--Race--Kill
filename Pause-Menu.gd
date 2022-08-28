@@ -6,7 +6,7 @@ func _unhandled_input(event):
 	if event.is_action_pressed("Pause-Menu"):
 		self.is_paused = !is_paused
 
-func set_is_paused(value):
+func set_is_paused(_value):
 	is_paused = true
 	get_tree().paused = is_paused
 	visible = is_paused
@@ -16,7 +16,7 @@ func set_not_is_paused():
 	get_tree().paused = is_paused
 	visible = is_paused
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	get_tree().paused = is_paused
 	visible = is_paused
 

@@ -18,6 +18,7 @@ func _on_Coin_coin_col():
 	coin = coin + 1
 	_ready()
 	if coin == 16:
-		get_tree().change_scene("res://youwin.tscn")
-
-
+		var level_id = Global.get_level_id()
+		if level_id  >= Global.level_ready:
+			Global.level_ready = level_id + 1
+		get_tree().change_scene("res://Levels.tscn")

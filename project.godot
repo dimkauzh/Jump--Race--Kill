@@ -18,6 +18,13 @@ config/icon="res://assets/player/platformChar_happy.png"
 
 Global="*res://global.gd"
 
+[debug]
+
+gdscript/warnings/void_assignment=false
+gdscript/warnings/narrowing_conversion=false
+gdscript/warnings/function_conflicts_variable=false
+gdscript/warnings/return_value_discarded=false
+
 [display]
 
 window/size/width=1280

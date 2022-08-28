@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/fonts/Pixel-Font.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/fonts/Main-Menu-Font.ttf" type="DynamicFontData" id=2]
@@ -17,10 +17,6 @@ size = 40
 font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=3]
-size = 40
-font_data = ExtResource( 1 )
-
-[sub_resource type="DynamicFont" id=12]
 size = 40
 font_data = ExtResource( 1 )
 
@@ -53,14 +49,14 @@ text = "Pause"
 pause_mode = 2
 modulate = Color( 1, 0, 0, 1 )
 self_modulate = Color( 1, 0, 0, 1 )
-anchor_left = 0.438
-anchor_top = 0.347
-anchor_right = 0.602
-anchor_bottom = 0.423
-margin_left = -0.511993
-margin_top = -0.199982
-margin_right = -1.44806
-margin_bottom = 0.200012
+anchor_left = 0.419
+anchor_top = 0.344
+anchor_right = 0.581
+anchor_bottom = 0.422
+margin_left = -0.320068
+margin_top = 0.319992
+margin_right = 0.319946
+margin_bottom = -0.840027
 custom_colors/font_color_disabled = Color( 0.886275, 0.886275, 0.886275, 1 )
 custom_fonts/font = SubResource( 2 )
 text = "Resume"
@@ -69,14 +65,14 @@ text = "Resume"
 pause_mode = 2
 modulate = Color( 0.101961, 1, 0, 1 )
 self_modulate = Color( 0.478431, 1, 0, 1 )
-anchor_left = 0.437
-anchor_top = 0.493
-anchor_right = 0.605
-anchor_bottom = 0.573
-margin_left = 0.512024
-margin_top = 0.199982
-margin_right = 0.480042
-margin_bottom = -1.80002
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -104.0
+margin_top = -24.0
+margin_right = 104.0
+margin_bottom = 32.0
 custom_fonts/font = SubResource( 11 )
 text = "Restart"
 
@@ -84,29 +80,15 @@ text = "Restart"
 pause_mode = 2
 modulate = Color( 0, 0.952941, 1, 1 )
 self_modulate = Color( 0, 1, 0.811765, 1 )
-anchor_left = 0.437
-anchor_top = 0.72
-anchor_right = 0.602
-anchor_bottom = 0.8
-margin_left = 0.511993
-margin_top = -3.05176e-05
-margin_right = -0.448059
-margin_bottom = 2.0
+anchor_left = 0.419
+anchor_top = 0.589
+anchor_right = 0.583
+anchor_bottom = 0.672
+margin_left = -0.320068
+margin_top = -0.0800476
+margin_bottom = -0.23999
 custom_fonts/font = SubResource( 3 )
 text = "Exit"
-
-[node name="Touchscreen controls" type="Button" parent="ColorRect"]
-modulate = Color( 0.921569, 0, 1, 1 )
-anchor_left = 0.383
-anchor_top = 0.613
-anchor_right = 0.664
-anchor_bottom = 0.69
-margin_left = -0.192017
-margin_top = 0.199982
-margin_right = 9.06396
-margin_bottom = -3.05176e-05
-custom_fonts/font = SubResource( 12 )
-text = "TouchControls"
 
 [connection signal="pressed" from="ColorRect/Resume" to="." method="_on_Resume_pressed"]
 [connection signal="pressed" from="ColorRect/Restart" to="." method="_on_Restart_pressed"]

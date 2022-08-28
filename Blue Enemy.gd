@@ -23,7 +23,7 @@ func change_color():
 #	if color == "purple" or color == "Purple":
 #		set_modulate("9d23e1")
 	color = set_modulate(color)
-func _physics_process(delta):
+func _physics_process(_delta):
 
 	if is_on_wall() or not $RayCast2D.is_colliding():
 		direction = direction * -1
@@ -37,13 +37,13 @@ func _physics_process(delta):
 	vel = move_and_slide(vel, Vector2.UP)
 
 
-func _on_up_collision_body_entered(body):
+func _on_up_collision_body_entered(_body):
 	speed = 0
 	$AnimatedSprite.play("squash")
 
 
-func _on_up_collision_body_exited(body):
+func _on_up_collision_body_exited(_body):
 	queue_free()
 	
-func _on_middle_collision_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
+func _on_middle_collision_body_shape_entered(_body_rid, body, _body_shape_index, _local_shape_index):
 	body.ouch(position.x)
