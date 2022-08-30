@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://tilemaps/World-TileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://tilemaps/One-Way Blocks.tres" type="TileSet" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://tilemaps/ladder.tres" type="TileSet" id=13]
 [ext_resource path="res://Pause-Menu.tscn" type="PackedScene" id=14]
 [ext_resource path="res://MobileControls.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Game-Music.tscn" type="PackedScene" id=16]
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 2948.75, 21 )
@@ -31,16 +32,16 @@ extents = Vector2( 288, 32 )
 [sub_resource type="RectangleShape2D" id=11]
 
 [sub_resource type="RectangleShape2D" id=12]
-extents = Vector2( 45, 445 )
+extents = Vector2( 32, 224 )
 
 [sub_resource type="RectangleShape2D" id=13]
-extents = Vector2( 44, 702 )
+extents = Vector2( 32, 352 )
 
 [sub_resource type="RectangleShape2D" id=14]
-extents = Vector2( 44, 317 )
+extents = Vector2( 32, 160 )
 
 [sub_resource type="RectangleShape2D" id=15]
-extents = Vector2( 43, 447 )
+extents = Vector2( 32, 224 )
 
 [sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0, 0, 0, 0.317647 )
@@ -122,30 +123,29 @@ shape = SubResource( 11 )
 one_way_collision = true
 
 [node name="Ladder" type="TileMap" parent="."]
-scale = Vector2( 0.5, 0.5 )
 tile_set = ExtResource( 13 )
 show_collision = true
 collision_layer = 32
 format = 1
-tile_data = PoolIntArray( -655262, 0, 0, -524190, 0, 0, -393118, 0, 0, -262098, 0, 0, -262078, 0, 0, -262046, 0, 0, -262002, 0, 0, -131026, 0, 0, -131006, 0, 0, -130974, 0, 0, -130930, 0, 0, 46, 0, 0, 66, 0, 0, 142, 0, 0, 131118, 0, 0, 131138, 0, 0, 131214, 0, 0, 262190, 0, 0, 262210, 0, 0, 262286, 0, 0, 393262, 0, 0, 393282, 0, 0, 393358, 0, 0, 524334, 0, 0, 524354, 0, 0, 524430, 0, 0, 655426, 0, 0, 786498, 0, 0, 917570, 0, 0, 1048642, 0, 0 )
+tile_data = PoolIntArray( -327631, 1, 0, -262095, 0, 0, -196559, 0, 0, -131049, 1, 0, -131039, 1, 0, -131023, 0, 0, -131001, 1, 0, -65513, 0, 0, -65503, 0, 0, -65487, 0, 0, -65465, 0, 0, 23, 0, 0, 33, 0, 0, 71, 0, 0, 65559, 0, 0, 65569, 0, 0, 65607, 0, 0, 131095, 0, 0, 131105, 0, 0, 131143, 0, 0, 196631, 0, 0, 196641, 0, 0, 196679, 0, 0, 262167, 0, 0, 262177, 0, 0, 262215, 0, 0, 327713, 0, 0, 393249, 0, 0, 458785, 0, 0, 524321, 0, 0 )
 
 [node name="ladder_checker" type="Area2D" parent="Ladder"]
 collision_layer = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladder/ladder_checker"]
-position = Vector2( 3008, 191 )
+position = Vector2( 1503, 96 )
 shape = SubResource( 12 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Ladder/ladder_checker"]
-position = Vector2( 4288, 446 )
+position = Vector2( 2143, 224 )
 shape = SubResource( 13 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Ladder/ladder_checker"]
-position = Vector2( 6336, -323 )
+position = Vector2( 3167, -160 )
 shape = SubResource( 14 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Ladder/ladder_checker"]
-position = Vector2( 9153, 191 )
+position = Vector2( 4575, 96 )
 shape = SubResource( 15 )
 
 [node name="Player" parent="." instance=ExtResource( 6 )]
@@ -164,8 +164,6 @@ drag_margin_bottom = 0.1
 editor_draw_limits = true
 
 [node name="Timer" type="Timer" parent="Player"]
-
-[node name="MobileControls" parent="Player" instance=ExtResource( 15 )]
 
 [node name="Coins" type="Node2D" parent="."]
 
@@ -327,6 +325,8 @@ stretch_mode = 2
 visible = false
 
 [node name="MobileControls" parent="." instance=ExtResource( 15 )]
+
+[node name="Game-Music" parent="." instance=ExtResource( 16 )]
 
 [connection signal="body_shape_entered" from="Fall-Down Zone" to="." method="_on_Area2D_body_shape_entered"]
 [connection signal="body_entered" from="Ladder/ladder_checker" to="." method="_on_ladder_checker_body_entered"]

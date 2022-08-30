@@ -20,9 +20,13 @@ Global="*res://global.gd"
 
 [debug]
 
+gdscript/warnings/unassigned_variable=false
+gdscript/warnings/unassigned_variable_op_assign=false
+gdscript/warnings/unused_variable=false
 gdscript/warnings/void_assignment=false
 gdscript/warnings/narrowing_conversion=false
 gdscript/warnings/function_conflicts_variable=false
+gdscript/warnings/unused_signal=false
 gdscript/warnings/return_value_discarded=false
 
 [display]

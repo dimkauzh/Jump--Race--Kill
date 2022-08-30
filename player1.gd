@@ -29,24 +29,32 @@ func get_input():
 	if jump and is_on_floor():
 		jumping = true
 		vel.y = jump_speed
+		$"Jump-Sound".play()
+
 	elif right:
 		vel.x += speed
 		$AnimatedSprite.play("walk")
 		$AnimatedSprite.flip_h = vel.x < 0
+
 	elif left:
 		vel.x -= speed
 		$AnimatedSprite.play("walk")
 		$AnimatedSprite.flip_h = vel.x < 0
+
 	else:
 		vel.x = 0
 		$AnimatedSprite.play("idle")
 		$AnimatedSprite.stop()
 #		$AnimatedSprite.frame = 0
+			
 	if not is_on_floor():
 		$AnimatedSprite.play("jump")
-
+	
 func _ready():
 	Global.player = self
+
+func _on_JumpSound_finished():
+	$"Jump-Sound".stop()
 
 func ladder_animation():
 	$AnimatedSprite.play("ladder")
@@ -72,11 +80,12 @@ func _physics_process(delta):
 		elif Input.is_action_pressed("ui_down"):
 			vel.y += speed
 		elif Input.is_action_pressed('ui_right'):
-			vel.x += ladder_speed
+			vel.x += speed
 		elif Input.is_action_pressed('ui_left'):
-			vel.x -= ladder_speed
+			vel.x -= speed
 		else:
 			$AnimatedSprite.stop()
+
 	vel = move_and_slide(vel, Vector2(0, -1))
 	
 func ouch(var pos_x):
@@ -84,6 +93,7 @@ func ouch(var pos_x):
 	set_modulate("c82020")
 	vel.y = jump_speed * 0.5
 	$Timer.start()
+	$Ouch.play()
 	if position.x < pos_x:
 		vel.x = position.x - jump_ouch
 				

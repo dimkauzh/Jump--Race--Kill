@@ -16,6 +16,7 @@ func load_hearts():
 
 func _on_Coin_coin_col():
 	coin = coin + 1
+	
 	_ready()
 	if coin == 16:
 		var level_id = Global.get_level_id()

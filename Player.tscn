@@ -1,8 +1,10 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://player1.gd" type="Script" id=1]
 [ext_resource path="res://assets/player/platformChar_climb1.png" type="Texture" id=2]
 [ext_resource path="res://assets/player/platformChar_climb2.png" type="Texture" id=3]
+[ext_resource path="res://assets/soundsandmusic/sounds/jump1.ogg" type="AudioStream" id=4]
+[ext_resource path="res://assets/soundsandmusic/sounds/ouch.ogg" type="AudioStream" id=5]
 [ext_resource path="res://assets/player/platformChar_walk1.png" type="Texture" id=11]
 [ext_resource path="res://assets/player/platformChar_walk2.png" type="Texture" id=13]
 [ext_resource path="res://assets/player/platformChar_jump.png" type="Texture" id=15]
@@ -35,6 +37,7 @@ animations = [ {
 } ]
 
 [node name="Player" type="KinematicBody2D" groups=["Climber"]]
+scale = Vector2( 1.5, 1.5 )
 collision_mask = 14
 script = ExtResource( 1 )
 
@@ -47,3 +50,15 @@ position = Vector2( 1, 1 )
 scale = Vector2( 0.625, 0.614583 )
 frames = SubResource( 1 )
 animation = "idle"
+
+[node name="Jump-Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -5.0
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Ouch" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+
+[connection signal="finished" from="Jump-Sound" to="." method="_on_JumpSound_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

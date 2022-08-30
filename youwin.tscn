@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/fonts/Pixel-Font.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/background/set2_background.png" type="Texture" id=2]
 [ext_resource path="res://youwin.gd" type="Script" id=3]
+[ext_resource path="res://assets/soundsandmusic/music/Swinging Pants.ogg" type="AudioStream" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 120
@@ -51,5 +52,8 @@ margin_right = -18.9281
 margin_bottom = 0.19989
 custom_fonts/font = SubResource( 2 )
 text = "Return To Level Screen"
+
+[node name="BackGround-Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

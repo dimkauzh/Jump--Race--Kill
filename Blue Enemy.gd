@@ -14,14 +14,6 @@ func _ready():
 	change_color()
 	
 func change_color():
-#	if color == "Blue" or color == "blue":
-#		pass
-#	if color == "Red" or color == "red":
-#		set_modulate("ff0000")
-#	if color == "Green" or color == "green":
-#		set_modulate("ddfd00")
-#	if color == "purple" or color == "Purple":
-#		set_modulate("9d23e1")
 	color = set_modulate(color)
 func _physics_process(_delta):
 
@@ -40,7 +32,7 @@ func _physics_process(_delta):
 func _on_up_collision_body_entered(_body):
 	speed = 0
 	$AnimatedSprite.play("squash")
-
+	$Squash.play()	
 
 func _on_up_collision_body_exited(_body):
 	queue_free()

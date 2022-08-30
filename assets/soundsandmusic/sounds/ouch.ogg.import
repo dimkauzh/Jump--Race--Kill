@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/ouch.ogg-96792cf7149a2985bed70385557f2bfd.oggstr"
+
+[deps]
+
+source_file="res://assets/soundsandmusic/sounds/ouch.ogg"
+dest_files=[ "res://.import/ouch.ogg-96792cf7149a2985bed70385557f2bfd.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

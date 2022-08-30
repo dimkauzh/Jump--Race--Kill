@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://tilemaps/World-TileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://tilemaps/One-Way Blocks.tres" type="TileSet" id=2]
@@ -18,15 +18,16 @@
 [ext_resource path="res://Pause-Menu.tscn" type="PackedScene" id=16]
 [ext_resource path="res://assets/background/set2_background.png" type="Texture" id=17]
 [ext_resource path="res://MobileControls.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Game-Music.tscn" type="PackedScene" id=19]
 
 [sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 2346.5, 37 )
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 46.5, 1791.75 )
+extents = Vector2( 32, 896 )
 
 [sub_resource type="RectangleShape2D" id=9]
-extents = Vector2( 46.25, 384.75 )
+extents = Vector2( 32, 192 )
 
 [sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0, 0, 0, 0.317647 )
@@ -73,21 +74,20 @@ format = 1
 tile_data = PoolIntArray( -1376204, 2, 0, 131079, 2, 0, 196640, 0, 0, 196641, 0, 0, 196642, 0, 0, 196643, 0, 0, 196644, 0, 0, 196645, 0, 0, 262175, 0, 0, 262176, 0, 0, 262177, 0, 0, 262178, 0, 0, 262179, 0, 0, 262180, 0, 0, 262181, 0, 0 )
 
 [node name="Ladder" type="TileMap" parent="."]
-scale = Vector2( 0.5, 0.5 )
 tile_set = ExtResource( 4 )
 collision_layer = 32
 format = 1
-tile_data = PoolIntArray( -2752408, 0, 0, -2621336, 0, 0, -2490264, 0, 0, -2359192, 0, 0, -2228120, 0, 0, -2097048, 0, 0, -1965976, 0, 0, -1834904, 0, 0, -1703832, 0, 0, -1572760, 0, 0, -1441688, 0, 0, -1310616, 0, 0, -1179544, 0, 0, -1048472, 0, 0, -917400, 0, 0, -786328, 0, 0, -655256, 0, 0, -524184, 0, 0, -393112, 0, 0, -262040, 0, 0, -130968, 0, 0, 104, 0, 0, 131176, 0, 0, 262158, 0, 0, 262248, 0, 0, 393230, 0, 0, 393320, 0, 0, 524302, 0, 0, 524392, 0, 0, 655374, 0, 0, 655464, 0, 0, 786446, 0, 0, 786536, 0, 0, 917518, 0, 0 )
+tile_data = PoolIntArray( -1376204, 1, 0, -1310668, 0, 0, -1245132, 0, 0, -1179596, 0, 0, -1114060, 0, 0, -1048524, 0, 0, -982988, 0, 0, -917452, 0, 0, -851916, 0, 0, -786380, 0, 0, -720844, 0, 0, -655308, 0, 0, -589772, 0, 0, -524236, 0, 0, -458700, 0, 0, -393164, 0, 0, -327628, 0, 0, -262092, 0, 0, -196556, 0, 0, -131020, 0, 0, -65484, 0, 0, 52, 0, 0, 65588, 0, 0, 131079, 1, 0, 131124, 0, 0, 196615, 0, 0, 196660, 0, 0, 262151, 0, 0, 262196, 0, 0, 327687, 0, 0, 327732, 0, 0, 393223, 0, 0, 393268, 0, 0, 458759, 0, 0 )
 
 [node name="ladder_checker" type="Area2D" parent="Ladder"]
 collision_layer = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladder/ladder_checker"]
-position = Vector2( 6722, -896.25 )
+position = Vector2( 3360, -448 )
 shape = SubResource( 1 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Ladder/ladder_checker"]
-position = Vector2( 960, 638.75 )
+position = Vector2( 480, 320 )
 shape = SubResource( 9 )
 
 [node name="Coins" type="Node" parent="."]
@@ -321,6 +321,8 @@ collision_layer = 128
 [node name="Med-Pack3" parent="Medpacks" instance=ExtResource( 14 )]
 position = Vector2( 94, -550 )
 collision_layer = 128
+
+[node name="Game-Music" parent="." instance=ExtResource( 19 )]
 
 [connection signal="body_shape_entered" from="Fallzone" to="Fallzone" method="_on_Area2D_body_shape_entered"]
 [connection signal="body_entered" from="Ladder/ladder_checker" to="." method="_on_ladder_checker_body_entered"]

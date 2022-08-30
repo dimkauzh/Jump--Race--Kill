@@ -14,25 +14,6 @@ func get_level_id():
 	var level_name = get_tree().get_current_scene().get_name()
 	return int(level_name.replace("Level ", ""))
 
-
-func hearts_scenes_level1():
-	if hearts == 0:
-		get_tree().change_scene("res://gameover.tscn")
-	else:
-		get_tree().change_scene("res://Level 1.tscn")
-		
-func hearts_scenes_level2():
-	if hearts == 0:
-		get_tree().change_scene("res://gameover.tscn")
-	else:
-		get_tree().change_scene("res://Level 2.tscn")
-		
-func hearts_scenes_level3():
-	if hearts == 0:
-		get_tree().change_scene("res://gameover.tscn")
-	else:
-		get_tree().change_scene("res://Level 3.tscn")
-
 func hearts_scenes_level():
 	if hearts == 0:
 		get_tree().change_scene("res://gameover.tscn")

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/squash.ogg-55ffbb3e30a689b89d14eba3ed330733.oggstr"
+
+[deps]
+
+source_file="res://assets/soundsandmusic/sounds/squash.ogg"
+dest_files=[ "res://.import/squash.ogg-55ffbb3e30a689b89d14eba3ed330733.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
