@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://assets/background/set2_background.png" type="Texture" id=1]
 [ext_resource path="res://assets/fonts/CrimsonText-Regular.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://assets/fonts/Pixel-Font.TTF" type="DynamicFontData" id=3]
 [ext_resource path="res://Levels.gd" type="Script" id=4]
+[ext_resource path="res://assets/soundsandmusic/music/Swinging Pants.ogg" type="AudioStream" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 95
@@ -94,6 +95,10 @@ disabled = true
 action_mode = 0
 button_mask = 7
 text = "Level 3"
+
+[node name="Background-Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+autoplay = true
 
 [connection signal="pressed" from="Back" to="." method="_on_Back_pressed"]
 [connection signal="pressed" from="Levels/Level 1" to="." method="_on_Level_pressed" binds= [ 1 ]]
