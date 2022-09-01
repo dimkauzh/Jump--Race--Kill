@@ -43,5 +43,4 @@ wait_time = 0.2
 stream = ExtResource( 13 )
 
 [connection signal="body_shape_entered" from="." to="." method="_on_MedPack_body_shape_entered"]
-[connection signal="body_shape_exited" from="." to="." method="_on_MedPack_body_shape_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
