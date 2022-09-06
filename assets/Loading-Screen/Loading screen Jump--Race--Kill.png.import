@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Jump, Race, Kill.png-aa711239e5a519397071e1882e7a03cb.stex"
+path="res://.import/Loading screen Jump--Race--Kill.png-449741f661d98d89a8fd36fa4fb259fe.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Loading-Screen/Jump, Race, Kill.png"
-dest_files=[ "res://.import/Jump, Race, Kill.png-aa711239e5a519397071e1882e7a03cb.stex" ]
+source_file="res://assets/Loading-Screen/Loading screen Jump--Race--Kill.png"
+dest_files=[ "res://.import/Loading screen Jump--Race--Kill.png-449741f661d98d89a8fd36fa4fb259fe.stex" ]
 
 [params]
 

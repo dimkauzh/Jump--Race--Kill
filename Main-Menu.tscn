@@ -109,10 +109,10 @@ texture = ExtResource( 1 )
 expand = true
 
 [node name="Player" type="TextureRect" parent="Panel"]
-margin_left = 88.0
-margin_top = 127.0
+margin_left = 79.0
+margin_top = 122.0
 margin_right = 128.0
-margin_bottom = 167.0
+margin_bottom = 176.0
 texture = ExtResource( 4 )
 expand = true
 
@@ -129,10 +129,10 @@ anchor_left = 0.465
 anchor_top = 0.42
 anchor_right = 0.865
 anchor_bottom = 0.52
-margin_left = -0.160034
-margin_top = -1.52588e-05
-margin_right = 0.239929
-margin_bottom = -3.05176e-05
+margin_left = 9.80005
+margin_top = 1.60001
+margin_right = 10.2
+margin_bottom = 1.60001
 custom_fonts/font = SubResource( 4 )
 text = "Play!"
 flat = true

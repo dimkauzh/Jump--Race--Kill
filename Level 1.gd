@@ -13,10 +13,6 @@ func _on_Area2D_body_shape_entered(_body_rid, _body, _body_shape_index, _local_s
 	Global.lose_hearts()
 	Global.hearts_scenes_level()
 
-func _on_Timer_timeout():
-	Global.lose_hearts()
-	Global.hearts_scenes_level()
-
 func _on_ladder_checker_body_entered(body):
 	if body.is_in_group("Climber"):
 		if body.climbing == false:
