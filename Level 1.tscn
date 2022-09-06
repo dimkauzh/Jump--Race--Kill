@@ -4,7 +4,7 @@
 [ext_resource path="res://tilemaps/One-Way Blocks.tres" type="TileSet" id=2]
 [ext_resource path="res://assets/background/set2_background.png" type="Texture" id=3]
 [ext_resource path="res://Coin.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Level 1.gd" type="Script" id=5]
+[ext_resource path="res://Levels.gd" type="Script" id=5]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/HUD/Coin_0.png" type="Texture" id=7]
 [ext_resource path="res://assets/fonts/Pixel-Font.TTF" type="DynamicFontData" id=8]
@@ -32,7 +32,7 @@ extents = Vector2( 288, 32 )
 [sub_resource type="RectangleShape2D" id=11]
 
 [sub_resource type="RectangleShape2D" id=12]
-extents = Vector2( 32, 216 )
+extents = Vector2( 32, 224 )
 
 [sub_resource type="RectangleShape2D" id=13]
 extents = Vector2( 32, 352 )
@@ -133,7 +133,7 @@ tile_data = PoolIntArray( -327631, 1, 0, -262095, 0, 0, -196559, 0, 0, -131049, 
 collision_layer = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladder/ladder_checker"]
-position = Vector2( 1503, 104 )
+position = Vector2( 1503, 96 )
 shape = SubResource( 12 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Ladder/ladder_checker"]
