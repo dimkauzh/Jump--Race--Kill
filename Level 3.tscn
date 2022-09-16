@@ -1,8 +1,9 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Levels.gd" type="Script" id=1]
 [ext_resource path="res://tilemaps/World-TileSet.tres" type="TileSet" id=2]
 [ext_resource path="res://tilemaps/One-Way Blocks.tres" type="TileSet" id=3]
+[ext_resource path="res://Menu-Touchscreen-button.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/hearts/hud_heartEmpty.png" type="Texture" id=6]
 [ext_resource path="res://HUD.gd" type="Script" id=7]
@@ -271,6 +272,8 @@ stretch_mode = 2
 
 [node name="Pause-Menu" parent="HUD" instance=ExtResource( 8 )]
 visible = false
+
+[node name="TouchScreenButton" parent="HUD" instance=ExtResource( 4 )]
 
 [node name="Game-Music" parent="." instance=ExtResource( 15 )]
 

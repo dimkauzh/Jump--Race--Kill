@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://tilemaps/World-TileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://tilemaps/One-Way Blocks.tres" type="TileSet" id=2]
@@ -19,6 +19,7 @@
 [ext_resource path="res://assets/background/set2_background.png" type="Texture" id=17]
 [ext_resource path="res://MobileControls.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Game-Music.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Menu-Touchscreen-button.tscn" type="PackedScene" id=20]
 
 [sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 2346.5, 37 )
@@ -211,6 +212,8 @@ stretch_mode = 2
 
 [node name="Pause-Menu" parent="HUD" instance=ExtResource( 16 )]
 visible = false
+
+[node name="TouchScreenButton" parent="HUD" instance=ExtResource( 20 )]
 
 [node name="Portal" parent="." instance=ExtResource( 15 )]
 position = Vector2( 3536, 382 )

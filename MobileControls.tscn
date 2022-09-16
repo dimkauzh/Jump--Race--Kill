@@ -1,10 +1,9 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://assets/Up-Arrow/key-board-arrow.png" type="Texture" id=1]
-[ext_resource path="res://assets/homebutton/HomeButton.png" type="Texture" id=2]
+[ext_resource path="res://Menu-Touchscreen-button.tscn" type="PackedScene" id=2]
 
 [node name="MobileControls" type="CanvasLayer"]
-visible = false
 
 [node name="Up" type="TouchScreenButton" parent="."]
 position = Vector2( 1104, 432 )
@@ -34,8 +33,4 @@ scale = Vector2( 0.75, 0.75 )
 normal = ExtResource( 1 )
 action = "ui_left"
 
-[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
-position = Vector2( 960, 0 )
-scale = Vector2( 0.333333, 0.333333 )
-normal = ExtResource( 2 )
-action = "Pause-Menu"
+[node name="TouchScreenButton" parent="." instance=ExtResource( 2 )]

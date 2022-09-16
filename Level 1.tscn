@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://tilemaps/World-TileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://tilemaps/One-Way Blocks.tres" type="TileSet" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://Pause-Menu.tscn" type="PackedScene" id=14]
 [ext_resource path="res://MobileControls.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Game-Music.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Menu-Touchscreen-button.tscn" type="PackedScene" id=17]
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 2948.75, 21 )
@@ -65,7 +66,7 @@ script = ExtResource( 5 )
 
 [node name="Background" type="Sprite" parent="."]
 light_mask = 8
-position = Vector2( -367, -2300 )
+position = Vector2( -505, -2296 )
 scale = Vector2( 10.55, 7.53333 )
 texture = ExtResource( 3 )
 centered = false
@@ -133,7 +134,7 @@ tile_data = PoolIntArray( -327631, 1, 0, -262095, 0, 0, -196559, 0, 0, -131049, 
 collision_layer = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladder/ladder_checker"]
-position = Vector2( 1503, 96 )
+position = Vector2( 1504, 96 )
 shape = SubResource( 12 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Ladder/ladder_checker"]
@@ -324,7 +325,10 @@ stretch_mode = 2
 [node name="Pause-Menu" parent="HUD" instance=ExtResource( 14 )]
 visible = false
 
+[node name="TouchScreenButton" parent="HUD" instance=ExtResource( 17 )]
+
 [node name="MobileControls" parent="." instance=ExtResource( 15 )]
+visible = false
 
 [node name="Game-Music" parent="." instance=ExtResource( 16 )]
 
