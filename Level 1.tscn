@@ -30,19 +30,20 @@ extents = Vector2( 192, 32 )
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 288, 32 )
 
-[sub_resource type="RectangleShape2D" id=11]
-
 [sub_resource type="RectangleShape2D" id=12]
-extents = Vector2( 32, 224 )
+extents = Vector2( 32, 218.5 )
 
 [sub_resource type="RectangleShape2D" id=13]
-extents = Vector2( 32, 352 )
+extents = Vector2( 32, 346.5 )
 
 [sub_resource type="RectangleShape2D" id=14]
-extents = Vector2( 32, 160 )
+extents = Vector2( 32, 154 )
 
 [sub_resource type="RectangleShape2D" id=15]
-extents = Vector2( 32, 224 )
+extents = Vector2( 32, 218.5 )
+
+[sub_resource type="RectangleShape2D" id=16]
+extents = Vector2( 32, 5 )
 
 [sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0, 0, 0, 0.317647 )
@@ -66,7 +67,7 @@ script = ExtResource( 5 )
 
 [node name="Background" type="Sprite" parent="."]
 light_mask = 8
-position = Vector2( -505, -2296 )
+position = Vector2( -521, -2280 )
 scale = Vector2( 10.55, 7.53333 )
 texture = ExtResource( 3 )
 centered = false
@@ -119,10 +120,6 @@ position = Vector2( 5599, -224 )
 shape = SubResource( 6 )
 one_way_collision = true
 
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="One-Way Blocks/StaticBody2D"]
-shape = SubResource( 11 )
-one_way_collision = true
-
 [node name="Ladder" type="TileMap" parent="."]
 tile_set = ExtResource( 13 )
 show_collision = true
@@ -134,19 +131,19 @@ tile_data = PoolIntArray( -327631, 1, 0, -262095, 0, 0, -196559, 0, 0, -131049, 
 collision_layer = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladder/ladder_checker"]
-position = Vector2( 1504, 96 )
+position = Vector2( 1504, 101.5 )
 shape = SubResource( 12 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Ladder/ladder_checker"]
-position = Vector2( 2143, 224 )
+position = Vector2( 2144, 229.5 )
 shape = SubResource( 13 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Ladder/ladder_checker"]
-position = Vector2( 3167, -160 )
+position = Vector2( 3168, -154 )
 shape = SubResource( 14 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Ladder/ladder_checker"]
-position = Vector2( 4575, 96 )
+position = Vector2( 4575, 101.5 )
 shape = SubResource( 15 )
 
 [node name="Player" parent="." instance=ExtResource( 6 )]
@@ -165,6 +162,30 @@ drag_margin_bottom = 0.1
 editor_draw_limits = true
 
 [node name="Timer" type="Timer" parent="Player"]
+
+[node name="Off_Ladder_Block" type="StaticBody2D" parent="."]
+position = Vector2( 2944, -48 )
+collision_layer = 2048
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Off_Ladder_Block"]
+position = Vector2( -1441, -75 )
+shape = SubResource( 16 )
+one_way_collision = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Off_Ladder_Block"]
+position = Vector2( -801, -75 )
+shape = SubResource( 16 )
+one_way_collision = true
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Off_Ladder_Block"]
+position = Vector2( 225, -267 )
+shape = SubResource( 16 )
+one_way_collision = true
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Off_Ladder_Block"]
+position = Vector2( 1631, -75 )
+shape = SubResource( 16 )
+one_way_collision = true
 
 [node name="Coins" type="Node2D" parent="."]
 
