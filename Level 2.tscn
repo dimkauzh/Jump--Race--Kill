@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://tilemaps/World-TileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://tilemaps/One-Way Blocks.tres" type="TileSet" id=2]
@@ -25,10 +25,10 @@
 extents = Vector2( 2346.5, 37 )
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 32, 896 )
+extents = Vector2( 32, 890.5 )
 
 [sub_resource type="RectangleShape2D" id=9]
-extents = Vector2( 32, 192 )
+extents = Vector2( 32, 186 )
 
 [sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0, 0, 0, 0.317647 )
@@ -45,11 +45,17 @@ font_data = ExtResource( 11 )
 size = 42
 font_data = ExtResource( 11 )
 
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 32, 5.4375 )
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 32, 5 )
+
 [node name="Level 2" type="Node2D"]
 script = ExtResource( 12 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 2283, -937 )
+position = Vector2( 2281, -930 )
 scale = Vector2( 8.32031, 8.37083 )
 texture = ExtResource( 17 )
 
@@ -84,11 +90,11 @@ tile_data = PoolIntArray( -1376204, 1, 0, -1310668, 0, 0, -1245132, 0, 0, -11795
 collision_layer = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ladder/ladder_checker"]
-position = Vector2( 3360, -448 )
+position = Vector2( 3360, -442.5 )
 shape = SubResource( 1 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Ladder/ladder_checker"]
-position = Vector2( 480, 320 )
+position = Vector2( 480, 326 )
 shape = SubResource( 9 )
 
 [node name="Coins" type="Node" parent="."]
@@ -306,6 +312,7 @@ position = Vector2( 1586, 540 )
 color = "fd00ff"
 
 [node name="MobileControls" parent="." instance=ExtResource( 18 )]
+visible = false
 
 [node name="Medpacks" type="Node" parent="."]
 
@@ -326,6 +333,18 @@ position = Vector2( 94, -550 )
 collision_layer = 128
 
 [node name="Game-Music" parent="." instance=ExtResource( 19 )]
+
+[node name="Off_Ladder_Block" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Off_Ladder_Block"]
+position = Vector2( 480, 133.438 )
+shape = SubResource( 10 )
+one_way_collision = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Off_Ladder_Block"]
+position = Vector2( 3360, -1339 )
+shape = SubResource( 11 )
+one_way_collision = true
 
 [connection signal="body_shape_entered" from="Fallzone" to="Fallzone" method="_on_Area2D_body_shape_entered"]
 [connection signal="body_entered" from="Ladder/ladder_checker" to="." method="_on_ladder_checker_body_entered"]
